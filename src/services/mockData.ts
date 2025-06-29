@@ -36,7 +36,7 @@ export const mockMatches: Match[] = [
   },
   {
     id: '3',
-    homeTeam: 'Man City',
+    homeTeam: 'Manchester City',
     awayTeam: 'Real Madrid',
     kickoffTime: '2024-04-17T19:45:00Z',
     isLocked: true,
