@@ -1,0 +1,156 @@
+.user-prediction-history {
+  width: 100%;
+  padding: 0.75rem;
+
+  &--empty {
+    text-align: center;
+    color: #666;
+    padding: 1.5rem;
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  &__table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+
+    th, td {
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+      vertical-align: top;
+    }
+
+    th {
+      font-weight: 600;
+      color: #333;
+      background-color: #f8f9fa;
+    }
+  }
+
+  &__match {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    min-height: 1.5rem;
+  }
+
+  &__match-result {
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #666;
+    opacity: 0.7;
+    margin-top: 0.3rem;
+  }
+
+  &__vs {
+    color: #666;
+    font-size: 0.9rem;
+  }
+
+  &__prediction {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__score {
+    font-weight: 500;
+  }
+
+  &__status-container {
+    min-height: 1.5rem;
+  }
+
+  &__status {
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    display: inline-block;
+    align-self: flex-start;
+
+    &--in_progress {
+      background-color: #fef3c7;
+      color: #92400e;
+    }
+
+    &--upcoming {
+      background-color: #e0e7ff;
+      color: #3730a3;
+    }
+  }
+
+  &__points {
+    font-weight: 600;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    display: inline-block;
+    
+    &--3 {
+      background-color: #dcfce7;
+      color: #166534;
+    }
+
+    &--1 {
+      background-color: #fef3c7;
+      color: #92400e;
+    }
+
+    &--0 {
+      background-color: #fee2e2;
+      color: #991b1b;
+    }
+  }
+
+  &__empty {
+    text-align: center;
+    color: #666;
+    padding: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.5rem;
+
+    &__title {
+      font-size: 1.125rem;
+      margin-bottom: 0.75rem;
+    }
+
+    &__table {
+      th, td {
+        padding: 0.4rem 0.5rem;
+        font-size: 0.875rem;
+      }
+    }
+
+    &__vs {
+      font-size: 0.8rem;
+    }
+
+    &__match-result {
+      font-size: 0.7rem;
+    }
+
+    &__status {
+      font-size: 0.75rem;
+      padding: 0.15rem 0.3rem;
+    }
+
+    &__points {
+      font-size: 0.75rem;
+      padding: 0.15rem 0.3rem;
+    }
+  }
+} 

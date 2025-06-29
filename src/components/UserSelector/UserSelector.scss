@@ -1,0 +1,66 @@
+.user-selector {
+  margin-bottom: 2rem;
+  
+  @media (max-width: 480px) {
+    margin: 1rem;
+  }
+
+  &__label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.75rem;
+    
+    @media (max-width: 480px) {
+      font-size: 0.875rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    background-color: white;
+    font-size: 1rem;
+    color: #1f2937;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.75rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
+    
+    @media (max-width: 480px) {
+      padding: 0.625rem;
+      font-size: 0.875rem;
+      border-radius: 0.375rem;
+      background-position: right 0.5rem center;
+      padding-right: 2rem;
+    }
+    
+    &:focus {
+      outline: none;
+      border-color: #6366f1;
+      box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+    }
+    
+    &:hover {
+      border-color: #9ca3af;
+    }
+    
+    /* Remove default select styling in Safari */
+    &::-webkit-select-arrow {
+      display: none;
+    }
+    
+    /* Remove default select styling in Firefox */
+    &:-moz-focusring {
+      color: transparent;
+      text-shadow: 0 0 0 #000;
+    }
+  }
+} 

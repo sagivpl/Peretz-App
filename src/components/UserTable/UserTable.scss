@@ -1,0 +1,120 @@
+.user-table {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  
+  @media (max-width: 480px) {
+    gap: 1rem;
+  }
+
+  &__section {
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    
+    @media (max-width: 480px) {
+      border-radius: 0.5rem;
+    }
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111827;
+    padding: 1rem;
+    margin: 0;
+    border-bottom: 1px solid #e5e7eb;
+    
+    @media (max-width: 480px) {
+      font-size: 1.125rem;
+      padding: 0.75rem;
+    }
+  }
+
+  &__wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 400px;
+  }
+
+  &__header {
+    background-color: #f9fafb;
+    
+    th {
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #4b5563;
+      border-bottom: 1px solid #e5e7eb;
+      
+      @media (max-width: 480px) {
+        padding: 0.5rem 0.75rem;
+      }
+
+      &:last-child {
+        text-align: right;
+      }
+
+      &:nth-child(2) {
+        width: 70px;
+        text-align: center;
+      }
+    }
+  }
+
+  &__row {
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: #f9fafb;
+    }
+
+    &--selected {
+      background-color: #e5e7eb;
+      
+      &:hover {
+        background-color: #d1d5db;
+      }
+    }
+  }
+
+  &__cell {
+    padding: 0.75rem;
+    font-size: 0.875rem;
+    color: #374151;
+    border-bottom: 1px solid #e5e7eb;
+    
+    @media (max-width: 480px) {
+      padding: 0.5rem 0.75rem;
+    }
+
+    &--number {
+      text-align: right;
+      font-family: "SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace;
+    }
+
+    &--winning {
+      color: #059669;
+      text-align: center;
+      font-size: 0.8rem;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+
+    &--money {
+      color: #1e40af;
+    }
+  }
+
+  tr:last-child .user-table__cell {
+    border-bottom: none;
+  }
+} 
