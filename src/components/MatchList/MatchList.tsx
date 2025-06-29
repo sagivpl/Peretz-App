@@ -1,5 +1,5 @@
 import { Match, User } from '../../types';
-import { getMatches } from '../../services/mockData';
+import { apiService } from '../../services/api';
 import { useEffect, useState, useMemo } from 'react';
 import { format } from 'date-fns';
 import { PredictionsTable } from '../PredictionsTable/PredictionsTable';
@@ -20,7 +20,7 @@ export const MatchList = ({ selectedUser, selectedMatch, onMatchSelect }: MatchL
     const fetchMatches = async () => {
       setIsLoading(true);
       try {
-        const fetchedMatches = await getMatches();
+        const fetchedMatches = await apiService.getMatches();
         setMatches(fetchedMatches);
       } catch (error) {
         console.error('Error fetching matches:', error);

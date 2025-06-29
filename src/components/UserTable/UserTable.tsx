@@ -1,5 +1,5 @@
 import { User } from '../../types';
-import { getUsers } from '../../services/mockData';
+import { apiService } from '../../services/api';
 import { useEffect, useState } from 'react';
 import { UserPredictionHistory } from './UserPredictionHistory/UserPredictionHistory';
 import './UserTable.scss';
@@ -21,7 +21,7 @@ export const UserTable = ({ selectedUser, onUserSelect }: UserTableProps) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const fetchedUsers = await getUsers();
+      const fetchedUsers = await apiService.getUsers();
       setUsers(fetchedUsers);
       
       // TODO: Replace with actual stats from backend
@@ -54,7 +54,7 @@ export const UserTable = ({ selectedUser, onUserSelect }: UserTableProps) => {
               <tr>
                 <th>User</th>
                 <th>W</th>
-                <th>$</th>
+                <th>EXP</th>
               </tr>
             </thead>
             <tbody>
@@ -75,7 +75,7 @@ export const UserTable = ({ selectedUser, onUserSelect }: UserTableProps) => {
                       {userStats.winCount}
                     </td>
                     <td className="user-table__cell user-table__cell--number user-table__cell--money">
-                      ${userStats.balance}
+                      {userStats.balance}
                     </td>
                   </tr>
                 );

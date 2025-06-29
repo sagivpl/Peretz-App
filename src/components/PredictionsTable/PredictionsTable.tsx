@@ -1,5 +1,5 @@
 import { Prediction, User, Match } from '../../types';
-import { getPredictions, getUsers } from '../../services/mockData';
+import { apiService } from '../../services/api';
 import { useEffect, useState, useCallback, useMemo } from 'react';
 import { PredictionInput } from '../PredictionInput/PredictionInput';
 import './PredictionsTable.scss';
@@ -20,8 +20,8 @@ const PredictionsTableComponent = ({ selectedMatch, selectedUser }: PredictionsT
     setIsLoading(true);
     try {
       const [fetchedPredictions, fetchedUsers] = await Promise.all([
-        getPredictions(),
-        getUsers(),
+        apiService.getPredictions(),
+        apiService.getUsers(),
       ]);
       setPredictions(fetchedPredictions);
       setUsers(fetchedUsers);

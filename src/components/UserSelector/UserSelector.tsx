@@ -1,5 +1,5 @@
 import { User } from '../../types';
-import { getUsers } from '../../services/mockData';
+import { apiService } from '../../services/api';
 import { useEffect, useState } from 'react';
 import './UserSelector.scss';
 
@@ -13,7 +13,7 @@ export const UserSelector = ({ onUserSelect }: UserSelectorProps) => {
 
   useEffect(() => {
     const fetchUsers = async () => {
-      const fetchedUsers = await getUsers();
+      const fetchedUsers = await apiService.getUsers();
       setUsers(fetchedUsers);
       if (fetchedUsers.length > 0) {
         setSelectedUserId(fetchedUsers[0].id);

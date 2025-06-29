@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { User, Match, Prediction } from '../../../types';
-import { getPredictions, getMatches } from '../../../services/mockData';
+import { apiService } from '../../../services/api';
 import { format } from 'date-fns';
 import './UserPredictionHistory.scss';
 
@@ -16,8 +16,8 @@ export const UserPredictionHistory = ({ selectedUser }: UserPredictionHistoryPro
     const fetchData = async () => {
       try {
         const [predictionsData, matchesData] = await Promise.all([
-          getPredictions(),
-          getMatches()
+          apiService.getPredictions(),
+          apiService.getMatches()
         ]);
         setPredictions(predictionsData);
         setMatches(matchesData);

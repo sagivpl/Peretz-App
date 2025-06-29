@@ -1,5 +1,5 @@
 import { Match, User, Prediction } from '../../types';
-import { createPrediction } from '../../services/mockData';
+import { apiService } from '../../services/api';
 import { useState, useEffect } from 'react';
 import './PredictionInput.scss';
 
@@ -33,7 +33,12 @@ export const PredictionInput = ({
     if (match.isLocked) return;
 
     try {
-      await createPrediction(user.id, match.id, homeScore, awayScore);
+      await apiService.createPrediction({
+        userId: user.id,
+        matchId: match.id,
+        homeScore,
+        awayScore
+      });
       onPredictionSubmit();
     } catch (error) {
       console.error('Failed to create prediction:', error);
